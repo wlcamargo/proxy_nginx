@@ -1,0 +1,14 @@
+networks:
+  playground:
+    driver: bridge
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    networks:
+      - playground
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
